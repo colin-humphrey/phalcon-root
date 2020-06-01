@@ -173,17 +173,21 @@ ping -c 4 phalcon
 
 ### Clone the repo under your htdocs
 
-git clone https://github.com/colin-humphrey/phalcon.git
+git clone https://github.com/colin-humphrey/phalcon-root.git
+
+⚠ You need to enable virtual hosts uncomment: Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf in your httpd.conf file and stop/start apache using the method mentioned above. 
+
+### Edit: /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 
 ### Add a VirtualHost configuration entry for the phalcon site
 
 <VirtualHost *:80>
     ServerAdmin admin@phalcon
-    DocumentRoot "/Applications/MAMP/htdocs/phalcon/public"
+    DocumentRoot "/Applications/MAMP/htdocs/phalcon-root/phalcon/public"
     ServerName phalcon
     ErrorLog "/Applications/MAMP/logs/phalcon-error_log"
     CustomLog "/Applications/MAMP/logs/phalcon-access_log" common
-    <Directory "/Applications/MAMP/htdocs/phalcon/public">
+    <Directory "/Applications/MAMP/htdocs/phalcon-root/phalcon/public">
         DirectoryIndex index.php
     </Directory>
 </VirtualHost>
@@ -198,9 +202,9 @@ git clone https://github.com/colin-humphrey/phalcon.git
 
 CREATE DATABASE phalcon;
 
-### Select the newly created phalcon database and create a table against it.
+### Select the newly created phalcon database and create a table against it.s
 
-CREATE TABLE `basics` (`id` int not null auto_increment primary key,`fact` varchar(255),`pro` varchar(255),`con`varchar(255),`source`varchar(255),`description` varchar(255),`notes` text,`created` timestamp null default null,`modified` timestamp not null default current_timestamp on update current_timestamp )
+CREATE TABLE `mvc` (`id` int not null auto_increment primary key,`fact` varchar(255),`pro` varchar(255),`con`varchar(255),`source`varchar(255),`description` varchar(255),`notes` text,`created` timestamp null default null,`modified` timestamp not null default current_timestamp on update current_timestamp )
 
 ## 7. Scaffolding application with devtools
 
