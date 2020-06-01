@@ -52,7 +52,7 @@ https://www.php.net/
 
 ## 1. Installation of MAMP & downgrade to php 7.2 Download and install MAMP
 
-###Downgrade to php7.2. Edit file: /Applications/MAMP/conf/apache/httpd.conf Overwrite 7.4.2 with 7.2.22
+### Downgrade to php7.2. Edit file: /Applications/MAMP/conf/apache/httpd.conf Overwrite 7.4.2 with 7.2.22
 
 LoadModule php7_module /Applications/MAMP/bin/php/php7.4.2/modules/libphp7.so
 
@@ -62,7 +62,7 @@ LoadModule php7_module /Applications/MAMP/bin/php/php7.4.2/modules/libphp7.so
 
 sh /Applications/MAMP/bin/stopApache.sh
 
-###Starting Apache:
+### Starting Apache:
 
 sh /Applications/MAMP/bin/startApache.sh
 
