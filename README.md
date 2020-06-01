@@ -179,6 +179,8 @@ git clone https://github.com/colin-humphrey/phalcon-root.git
 
 ### Edit: /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 
+Completely delete or comment out VirtualHost entries: dummy-host.example.com && dummy-host2.example.com
+
 ### Add a VirtualHost configuration entry for the phalcon site
 
 <VirtualHost *:80>
@@ -192,7 +194,7 @@ git clone https://github.com/colin-humphrey/phalcon-root.git
     </Directory>
 </VirtualHost>
 
-### Test the paths and verify nothing broken, the command should output. Syntax OK
+###  Test the paths.  At the moment the app is not scaffolded so a DocumentRoot warning will be thrown. 
 
 /Applications/MAMP/bin/apache2/bin/httpd -t
 
@@ -202,15 +204,15 @@ git clone https://github.com/colin-humphrey/phalcon-root.git
 
 CREATE DATABASE phalcon;
 
-### Select the newly created phalcon database and create a table against it.s
+### Select the newly created phalcon database and create a table against it using the SQL editor tabs
 
-CREATE TABLE `mvc` (`id` int not null auto_increment primary key,`fact` varchar(255),`pro` varchar(255),`con`varchar(255),`source`varchar(255),`description` varchar(255),`notes` text,`created` timestamp null default null,`modified` timestamp not null default current_timestamp on update current_timestamp )
+CREATE TABLE `mvc` (`id` int not null auto_increment primary key,`fact` varchar(255),`pro` varchar(255),`con`varchar(255),`source`varchar(255),`description` varchar(255),`notes` text,`created` timestamp null default null,`modified` timestamp not null default current_timestamp on update current_timestamp );
 
 ## 7. Scaffolding application with devtools
 
 ### Once the table is created on the database. Navigate to the phalcon DocumentRoot:
 
-cd /Applications/MAMP/htdocs/phalcon/
+cd /Applications/MAMP/htdocs/phalcon-root/
 
 ### Use the phalcon command to scaffold your app
 
